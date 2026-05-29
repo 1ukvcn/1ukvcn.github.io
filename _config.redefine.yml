@@ -1,0 +1,59 @@
+colors:
+  primary: "#FFD700"
+  default_mode: light
+
+global:
+  single_page: true
+  open_graph:
+    enable: true
+  scroll_progress:
+    bar: false
+    percentage: true
+
+home_banner:
+  enable: true
+  style: fixed
+  title: 想要成为特别的人
+  subtitle:
+    text: 这里是 1ukvcn 的个人博客
+
+navbar:
+  links:
+    Home:
+      path: /
+      icon: fa-regular fa-house
+    Archives:
+      path: /archives/
+      icon: fa-solid fa-box-archive
+    Tags:
+      path: /tags/
+      icon: fa-solid fa-tags
+    About:
+      path: /about/
+      icon: fa-regular fa-user
+  search:
+    enable: true
+    preload: true
+
+articles:
+  word_count:
+    enable: true
+    count: true
+    min2read: true
+  code_block:
+    copy: true
+    style: mac
+    highlight_theme:
+      light: github
+      dark: vs2015
+  toc:
+    enable: true
+    max_depth: 3
+    expand: true
+  lazyload: true
+
+plugins:
+  feed:
+    enable: true
+  mermaid:
+    enable: false

@@ -4,11 +4,11 @@
 
 # Site
 title: 1ukvcn's Blog
-subtitle: ''
-description: '个人博客'
-keywords:
+subtitle: '想要成为特别的人'
+description: '这里是 1ukvcn 的个人博客，记录技术、学习、安全和生活。'
+keywords: Blog, Hexo, GitHub Pages, Redefine, 1ukvcn
 author: 1ukvcn
-language: en
+language: zh-CN
 timezone: Asia/Shanghai
 
 # URL
@@ -40,7 +40,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 syntax_highlighter: highlight.js

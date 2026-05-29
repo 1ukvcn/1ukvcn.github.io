@@ -174,14 +174,14 @@ articles:
 comment:
   # Giscus 需要先在 GitHub 开启 Discussions，并从 https://giscus.app/zh-CN 获取 repo_id / category_id。
   # 填好后把 enable 改成 true，详见 GISCUS_SETUP.md。
-  enable: false
+  enable: true
   system: giscus
   config:
     giscus:
       repo: 1ukvcn/1ukvcn.github.io
-      repo_id:
+      repo_id: "R_kgDOSrMEZg"
       category: Announcements
-      category_id:
+      category_id: "DIC_kwDOSrMEZs4C-FOo"
       mapping: pathname
       strict: 0
       reactions_enabled: 1

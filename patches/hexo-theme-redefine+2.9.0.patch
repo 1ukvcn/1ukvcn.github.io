@@ -1,0 +1,138 @@
+diff --git a/node_modules/hexo-theme-redefine/layout/pages/home/home-sidebar.ejs b/node_modules/hexo-theme-redefine/layout/pages/home/home-sidebar.ejs
+index 7acd14a..f25c5d9 100644
+--- a/node_modules/hexo-theme-redefine/layout/pages/home/home-sidebar.ejs
++++ b/node_modules/hexo-theme-redefine/layout/pages/home/home-sidebar.ejs
+@@ -3,13 +3,117 @@
+         <%
+             const hasSidebarLinks = theme.home.sidebar.links !== null;
+             const hasSidebarAnnouncement = theme.home.sidebar.announcement !== null;
++            const sidebarConfig = theme.home && theme.home.sidebar ? theme.home.sidebar : {};
++            const sidebarWidgets = sidebarConfig.widgets || {};
++            const sidebarWidgetsEnabled = sidebarWidgets.enable !== false;
++            const latestPostsLimit = Number(sidebarWidgets.latest_posts_limit || 5);
++            const categoriesLimit = Number(sidebarWidgets.categories_limit || 8);
++            const tagsLimit = Number(sidebarWidgets.tags_limit || 12);
++            const archivesLimit = Number(sidebarWidgets.archives_limit || 6);
++            const monthNames = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'];
++            const archiveMap = {};
++            const archiveItems = [];
++            if (site.posts && site.posts.length) {
++                site.posts.sort('date', -1).each(function(post) {
++                    const year = date(post.date, 'YYYY');
++                    const month = date(post.date, 'MM');
++                    const monthIndex = Math.max(0, Math.min(11, Number(month) - 1));
++                    const key = year + '-' + month;
++                    if (!archiveMap[key]) {
++                        archiveMap[key] = {
++                            year: year,
++                            month: month,
++                            title: monthNames[monthIndex] + ' ' + year,
++                            count: 0
++                        };
++                        archiveItems.push(archiveMap[key]);
++                    }
++                    archiveMap[key].count += 1;
++                });
++            }
+         %>
+-        <% if (theme.home.sidebar.first_item === "info") { %>
+-            <div class="sidebar-content">
++        <% function renderProfileCard(marginTop) { %>
++            <div class="sidebar-content"<% if (marginTop) { %> marginTop<% } %>>
+                 <%- partial("components/sidebar/avatar") %>
+                 <%- partial("components/sidebar/author") %>
+                 <%- partial('components/sidebar/statistics')%>
++                <% if (sidebarConfig.signature) { %>
++                    <div class="profile-signature"><%- sidebarConfig.signature %></div>
++                <% } %>
+             </div>
++        <% } %>
++        <% function renderSidebarWidgets() { %>
++            <% if (sidebarWidgetsEnabled) { %>
++                <div class="home-sidebar-widgets">
++                    <% if (site.posts && site.posts.length) { %>
++                        <section class="home-sidebar-widget sidebar-latest-posts">
++                            <h3 class="sidebar-widget-title"><i class="fa-solid fa-clock-rotate-left"></i><span>最新文章</span></h3>
++                            <ul class="sidebar-widget-list latest-post-list">
++                                <% site.posts.sort('date', -1).limit(latestPostsLimit).each(function(post) { %>
++                                    <li>
++                                        <a href="<%- url_for(post.path) %>">
++                                            <span class="sidebar-post-title"><%= post.title || '(no title)' %></span>
++                                            <time datetime="<%- date_xml(post.date) %>"><%= date(post.date, config.date_format) %></time>
++                                        </a>
++                                    </li>
++                                <% }) %>
++                            </ul>
++                        </section>
++                    <% } %>
++
++                    <% if ((site.categories && site.categories.length) || (site.tags && site.tags.length)) { %>
++                        <section class="home-sidebar-widget sidebar-taxonomy-widget">
++                            <h3 class="sidebar-widget-title"><i class="fa-solid fa-tags"></i><span>分类标签</span></h3>
++                            <% if (site.categories && site.categories.length) { %>
++                                <div class="taxonomy-block">
++                                    <div class="taxonomy-subtitle"><i class="fa-solid fa-folder-open"></i><span>分类</span></div>
++                                    <div class="sidebar-taxonomy-list category-taxonomy-list">
++                                        <% site.categories.sort('name', 1).limit(categoriesLimit).each(function(category) { %>
++                                            <a href="<%- url_for(category.path) %>">
++                                                <span><%= category.name %></span>
++                                                <b><%= category.length %></b>
++                                            </a>
++                                        <% }) %>
++                                    </div>
++                                </div>
++                            <% } %>
++                            <% if (site.tags && site.tags.length) { %>
++                                <div class="taxonomy-block">
++                                    <div class="taxonomy-subtitle"><i class="fa-solid fa-hashtag"></i><span>标签</span></div>
++                                    <div class="sidebar-taxonomy-list tag-taxonomy-list">
++                                        <% site.tags.sort('name', 1).limit(tagsLimit).each(function(tag) { %>
++                                            <a href="<%- url_for(tag.path) %>">
++                                                <span><%= tag.name %></span>
++                                                <b><%= tag.length %></b>
++                                            </a>
++                                        <% }) %>
++                                    </div>
++                                </div>
++                            <% } %>
++                        </section>
++                    <% } %>
++
++                    <% if (archiveItems.length) { %>
++                        <section class="home-sidebar-widget sidebar-archives-widget">
++                            <h3 class="sidebar-widget-title"><i class="fa-solid fa-box-archive"></i><span>归档</span></h3>
++                            <ul class="sidebar-widget-list archive-list-custom">
++                                <% archiveItems.slice(0, archivesLimit).forEach(function(item) { %>
++                                    <li>
++                                        <a href="<%- url_for(config.archive_dir + '/' + item.year + '/' + item.month + '/') %>">
++                                            <span><%= item.title %></span>
++                                            <b><%= item.count %></b>
++                                        </a>
++                                    </li>
++                                <% }) %>
++                            </ul>
++                        </section>
++                    <% } %>
++                </div>
++            <% } %>
++        <% } %>
++        <% if (theme.home.sidebar.first_item === "info") { %>
++            <% renderProfileCard(false) %>
++            <% renderSidebarWidgets() %>
+             <% if (hasSidebarLinks || hasSidebarAnnouncement) {%>
+                 <div class="sidebar-links"  <% if (hasSidebarLinks || hasSidebarAnnouncement) { %> marginTop <% } %>>
+                     <div class="site-info">
+@@ -67,11 +171,8 @@
+                     <% } %>
+                 </div>
+             <% } %>
+-            <div class="sidebar-content" <% if (hasSidebarLinks || hasSidebarAnnouncement) { %> marginTop <% } %>>
+-                <%- partial("components/sidebar/avatar") %>
+-                <%- partial("components/sidebar/author") %>
+-                <%- partial('components/sidebar/statistics')%>
+-            </div>
++            <% renderProfileCard(hasSidebarLinks || hasSidebarAnnouncement) %>
++            <% renderSidebarWidgets() %>
+         <% } %>
+ 
+     </div>

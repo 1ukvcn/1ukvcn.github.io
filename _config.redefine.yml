@@ -1,12 +1,12 @@
 info:
   title: 1ukvcn's Blog
-  subtitle: 想要成为特别的人
+  subtitle: 平安喜樂 順遂無憂
   author: 1ukvcn
   url: https://1ukvcn.github.io
 
 defaults:
   favicon: /images/favicon.svg
-  avatar: /images/avatar.svg
+  avatar: /images/avatar.jpg
 
 colors:
   primary: "#f5b301"
@@ -53,7 +53,7 @@ home_banner:
   image:
     light: /images/banner-light.svg
     dark: /images/banner-dark.svg
-  title: 想要成为特别的人
+  title: 平安喜樂 順遂無憂
   subtitle:
     text:
       - 记录技术、学习和生活

@@ -1,12 +1,20 @@
 ---
 title: 我的博客搭好了
 date: 2026-05-29 18:00:00
+description: 记录 1ukvcn 使用 Hexo、Redefine 和 GitHub Pages 搭建个人博客的开始。
+keywords:
+  - 1ukvcn
+  - Hexo
+  - GitHub Pages
+  - 博客搭建
+cover: /images/covers/cover-hexo.svg
+thumbnail: /images/covers/cover-hexo.svg
 tags:
-  - Blog
+  - 博客
   - Hexo
   - GitHub Pages
 categories:
-  - 日志
+  - 折腾记录
 ---
 
 今天把自己的个人博客搭起来了。

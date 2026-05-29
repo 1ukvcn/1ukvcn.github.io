@@ -30,7 +30,7 @@ global:
     enable: true
     site_pv: true
     site_uv: true
-    post_pv: false
+    post_pv: true
 
   preloader:
     enable: false
@@ -123,11 +123,11 @@ home:
 
   categories:
     enable: true
-    limit: 5
+    limit: 100
 
   tags:
     enable: true
-    limit: 8
+    limit: 100
 
 articles:
   style:
@@ -172,7 +172,23 @@ articles:
   pangu_js: false
 
 comment:
+  # Giscus 需要先在 GitHub 开启 Discussions，并从 https://giscus.app/zh-CN 获取 repo_id / category_id。
+  # 填好后把 enable 改成 true，详见 GISCUS_SETUP.md。
   enable: false
+  system: giscus
+  config:
+    giscus:
+      repo: 1ukvcn/1ukvcn.github.io
+      repo_id:
+      category: Announcements
+      category_id:
+      mapping: pathname
+      strict: 0
+      reactions_enabled: 1
+      emit_metadata: 0
+      lang: zh-CN
+      input_position: bottom
+      loading: lazy
 
 footer:
   runtime: true
@@ -191,7 +207,7 @@ plugins:
 
 page_templates:
   friends_column: 2
-  tags_style: blur
+  tags_style: cloud
   masonry:
     batch_size: 12
     initial_batch_size: 24

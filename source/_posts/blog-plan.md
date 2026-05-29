@@ -1,11 +1,20 @@
 ---
 title: 博客后续计划
 date: 2026-05-29 19:00:00
+description: 整理 1ukvcn 博客后续规划：工具命令、网络安全学习路线、CTF 和编程笔记。
+keywords:
+  - 博客计划
+  - 学习路线
+  - 网络安全
+  - CTF
+cover: /images/covers/cover-plan.svg
+thumbnail: /images/covers/cover-plan.svg
 tags:
   - 计划
   - 博客
+  - 学习路线
 categories:
-  - 日志
+  - 学习
 ---
 
 这个博客后面会慢慢变成我的个人知识库。

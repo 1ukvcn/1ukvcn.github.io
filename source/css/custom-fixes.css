@@ -39,3 +39,17 @@
 .category-list-content {
   margin-top: 0 !important;
 }
+
+
+/* Article cover polish */
+.home-article-thumbnail img,
+.article-content img:first-child {
+  object-fit: cover;
+}
+
+/* Keep taxonomy pages clean */
+.tagcloud-content a {
+  filter: none !important;
+  -webkit-filter: none !important;
+  opacity: 1 !important;
+}

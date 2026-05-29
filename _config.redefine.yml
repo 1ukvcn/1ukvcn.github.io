@@ -96,6 +96,9 @@ navbar:
     关于:
       path: /about/
       icon: fa-regular fa-user
+    GitHub:
+      path: https://github.com/1ukvcn
+      icon: fa-brands fa-github
   search:
     enable: true
     preload: true
@@ -105,7 +108,14 @@ home:
     enable: true
     position: left
     first_item: info
-    announcement: https://github.com/1ukvcn
+    announcement: '<a href="https://github.com/1ukvcn" target="_blank" rel="noopener noreferrer">GitHub @1ukvcn</a>'
+    signature: '平安喜樂，順遂無憂。'
+    widgets:
+      enable: true
+      latest_posts_limit: 5
+      categories_limit: 8
+      tags_limit: 12
+      archives_limit: 6
     show_on_mobile: true
     links:
       归档:
@@ -195,7 +205,7 @@ footer:
   icon: '<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>'
   start: 2026/05/29 16:30:00
   statistics: true
-  customize: Powered by Hexo & Redefine. Built by 1ukvcn.
+  customize: 'Powered by Hexo & Redefine. Built by <a href="https://github.com/1ukvcn" target="_blank" rel="noopener noreferrer">1ukvcn</a>.'
   icp:
     enable: false
 
@@ -217,8 +227,7 @@ inject:
   head:
     - '<link rel="stylesheet" href="/css/custom-fixes.css">'
   footer:
-    -
-    -
+    - '<script defer src="/js/custom-profile-card.js"></script>'
 
 cdn:
   enable: false

@@ -192,3 +192,274 @@
     grid-template-columns: 1fr !important;
   }
 }
+
+/* GitHub profile card on the home page */
+.home-sidebar-container {
+  width: 300px !important;
+}
+
+.home-sidebar-container .sidebar-content.github-profile-card {
+  padding: 30px 24px 28px !important;
+  border-radius: 18px !important;
+  text-align: center !important;
+  overflow: hidden !important;
+}
+
+.home-sidebar-container .sidebar-content.github-profile-card:hover {
+  transform: none !important;
+}
+
+.github-profile-card .avatar {
+  margin-top: 6px !important;
+  margin-bottom: 18px !important;
+}
+
+.github-profile-card .avatar img {
+  width: 118px !important;
+  height: 118px !important;
+  object-fit: cover !important;
+  border-radius: 20px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.github-profile-card .author {
+  margin: 0 !important;
+}
+
+.github-profile-card .author .name {
+  font-size: 1.52rem !important;
+  line-height: 1.2 !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.04em !important;
+  color: var(--second-text-color) !important;
+}
+
+.github-profile-card .author .label {
+  display: none !important;
+}
+
+.github-profile-card .statistics {
+  margin: 28px 0 30px !important;
+  gap: 0 !important;
+}
+
+.github-profile-card .statistics .item {
+  width: 33.333% !important;
+  min-width: 0 !important;
+  text-decoration: none !important;
+}
+
+.github-profile-card .statistics .item .label {
+  order: 1 !important;
+  margin-bottom: 8px !important;
+  font-size: 1.02rem !important;
+  line-height: 1.2 !important;
+  color: var(--third-text-color) !important;
+}
+
+.github-profile-card .statistics .item .number {
+  order: 2 !important;
+  font-size: 1.42rem !important;
+  line-height: 1.25 !important;
+  font-weight: 500 !important;
+  color: var(--second-text-color) !important;
+}
+
+.github-profile-card .statistics .item:hover .label,
+.github-profile-card .statistics .item:hover .number {
+  color: var(--primary-color) !important;
+}
+
+
+/* Keep only the clean profile card; navigation already exists in the top navbar. */
+.home-sidebar-container .sidebar-links {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .home-sidebar-container {
+    width: min(100%, 420px) !important;
+    margin: 0 auto 22px !important;
+  }
+}
+
+
+/* Profile signature: replaces the old Follow Me button. */
+.github-profile-card .profile-signature {
+  width: 100% !important;
+  margin-top: -6px !important;
+  padding: 14px 16px !important;
+  border-radius: 12px !important;
+  border: 1px solid var(--border-color) !important;
+  background: var(--third-background-color) !important;
+  color: var(--second-text-color) !important;
+  font-size: 0.98rem !important;
+  font-weight: 500 !important;
+  line-height: 1.65 !important;
+  text-align: center !important;
+  word-break: break-word !important;
+}
+
+/* Sidebar widgets below the profile card. */
+.home-sidebar-widgets {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 20px !important;
+  margin-top: 22px !important;
+}
+
+.home-sidebar-widget {
+  padding: 22px 22px !important;
+  border-radius: 18px !important;
+  border: 1px solid var(--border-color) !important;
+  background: var(--background-color-transparent-80) !important;
+  box-shadow: var(--redefine-box-shadow-flat) !important;
+  overflow: hidden !important;
+}
+
+.home-sidebar-widget:hover {
+  box-shadow: var(--redefine-box-shadow-hover) !important;
+  transform: none !important;
+}
+
+.sidebar-widget-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin: 0 0 18px !important;
+  color: var(--second-text-color) !important;
+  font-size: 1.26rem !important;
+  font-weight: 650 !important;
+  line-height: 1.25 !important;
+}
+
+.sidebar-widget-title i {
+  width: 22px !important;
+  color: var(--second-text-color) !important;
+  text-align: center !important;
+}
+
+.sidebar-widget-list {
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+}
+
+.sidebar-widget-list li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-bottom: 1px dashed var(--border-color) !important;
+}
+
+.sidebar-widget-list li:last-child {
+  border-bottom: 0 !important;
+}
+
+.latest-post-list a,
+.archive-list-custom a {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  min-height: 42px !important;
+  padding: 9px 0 !important;
+  color: var(--second-text-color) !important;
+  text-decoration: none !important;
+}
+
+.latest-post-list a {
+  align-items: flex-start !important;
+  flex-direction: column !important;
+  gap: 4px !important;
+}
+
+.sidebar-post-title {
+  display: -webkit-box !important;
+  overflow: hidden !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  font-size: 0.98rem !important;
+  font-weight: 560 !important;
+  line-height: 1.45 !important;
+  text-align: left !important;
+}
+
+.latest-post-list time {
+  color: var(--third-text-color) !important;
+  font-size: 0.86rem !important;
+  line-height: 1.2 !important;
+}
+
+.latest-post-list a:hover .sidebar-post-title,
+.archive-list-custom a:hover span,
+.sidebar-taxonomy-list a:hover span {
+  color: var(--primary-color) !important;
+}
+
+.archive-list-custom b,
+.sidebar-taxonomy-list b {
+  min-width: 24px !important;
+  height: 24px !important;
+  padding: 0 7px !important;
+  border-radius: 999px !important;
+  background: var(--third-background-color) !important;
+  color: var(--third-text-color) !important;
+  font-size: 0.82rem !important;
+  font-weight: 650 !important;
+  line-height: 24px !important;
+  text-align: center !important;
+}
+
+.taxonomy-block + .taxonomy-block {
+  margin-top: 18px !important;
+}
+
+.taxonomy-subtitle {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin: 0 0 10px !important;
+  color: var(--third-text-color) !important;
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+}
+
+.sidebar-taxonomy-list {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 9px !important;
+}
+
+.sidebar-taxonomy-list a {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  max-width: 100% !important;
+  padding: 8px 10px !important;
+  border-radius: 999px !important;
+  border: 1px solid var(--border-color) !important;
+  background: var(--background-color-transparent-15) !important;
+  color: var(--second-text-color) !important;
+  font-size: 0.9rem !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+}
+
+.sidebar-taxonomy-list a span {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.sidebar-taxonomy-list a:hover {
+  border-color: var(--primary-color) !important;
+}
+
+@media (max-width: 900px) {
+  .home-sidebar-widgets {
+    margin-top: 18px !important;
+  }
+}

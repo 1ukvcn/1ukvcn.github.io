@@ -7,8 +7,6 @@ keywords:
   - Hexo
   - GitHub Pages
   - 博客搭建
-cover: /images/covers/cover-hexo.svg
-thumbnail: /images/covers/cover-hexo.svg
 tags:
   - 博客
   - Hexo

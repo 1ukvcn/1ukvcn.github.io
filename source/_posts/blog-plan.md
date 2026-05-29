@@ -7,8 +7,6 @@ keywords:
   - 学习路线
   - 网络安全
   - CTF
-cover: /images/covers/cover-plan.svg
-thumbnail: /images/covers/cover-plan.svg
 tags:
   - 计划
   - 博客

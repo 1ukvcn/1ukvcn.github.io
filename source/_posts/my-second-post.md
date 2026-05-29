@@ -6,8 +6,6 @@ keywords:
   - 随笔
   - 博客
   - 学习记录
-cover: /images/covers/cover-blog.svg
-thumbnail: /images/covers/cover-blog.svg
 tags:
   - 随笔
   - 博客

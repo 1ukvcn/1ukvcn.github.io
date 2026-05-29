@@ -1,4 +1,4 @@
-/* 1ukvcn custom cleanup: tags/categories pages */
+/* 1ukvcn custom cleanup: taxonomy pages and home cards */
 
 /* Remove the outer card/frame around Tags and Categories pages */
 .page-template-container:has(.tagcloud-content),
@@ -20,36 +20,175 @@
   display: none !important;
 }
 
-/* Keep tag buttons clear and readable; no blur effect. */
+/* Tags: use compact pill layout instead of an oversized cloud. */
+.tagcloud-content {
+  width: min(860px, calc(100vw - 48px)) !important;
+  margin: 34px auto 0 !important;
+  text-align: center !important;
+}
+
+.tagcloud-content .tag-list,
+.tagcloud-content .tags-punctuation {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 14px !important;
+  line-height: 1 !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
+
+.tagcloud-content .tag-list li {
+  list-style: none !important;
+  margin: 0 !important;
+}
+
 .tagcloud-content .tag-list a,
 .tagcloud-content .tag-list a[data-weight],
 .tagcloud-content .tag-list:hover a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 7px !important;
+  min-height: 42px !important;
+  padding: 0 18px !important;
+  border-radius: 999px !important;
+  border: 1px solid var(--border-color) !important;
+  background: var(--background-color) !important;
+  box-shadow: var(--redefine-box-shadow-flat) !important;
+  color: var(--second-text-color) !important;
+  font-size: 1rem !important;
+  font-weight: 550 !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
   filter: none !important;
   -webkit-filter: none !important;
   opacity: 1 !important;
+  transform: none !important;
+}
+
+.tagcloud-content .tag-list a::after {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 24px !important;
+  height: 22px !important;
+  margin-left: 2px !important;
+  padding: 0 7px !important;
+  border-radius: 999px !important;
+  border: 1px solid var(--border-color) !important;
+  background: var(--third-background-color) !important;
+  color: var(--third-text-color) !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
 }
 
 .tagcloud-content .tag-list a:hover {
-  filter: none !important;
-  -webkit-filter: none !important;
+  color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  box-shadow: var(--redefine-box-shadow-hover) !important;
+  transform: translateY(-2px) !important;
 }
 
-/* Slightly reduce empty whitespace after removing the title */
-.tagcloud-content,
+/* Fallback: if the theme is switched back to cloud later, keep tag anchors readable. */
+.tagcloud-content > a {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 42px !important;
+  margin: 7px !important;
+  padding: 0 18px !important;
+  border-radius: 999px !important;
+  border: 1px solid var(--border-color) !important;
+  background: var(--background-color) !important;
+  box-shadow: var(--redefine-box-shadow-flat) !important;
+  color: var(--second-text-color) !important;
+  font-size: 1rem !important;
+  font-weight: 550 !important;
+  line-height: 1 !important;
+}
+
+/* Categories: make cards shorter, cleaner and less stretched. */
 .category-list-content {
-  margin-top: 0 !important;
+  width: min(760px, calc(100vw - 48px)) !important;
+  margin: 34px auto 0 !important;
 }
 
+.category-list-content .all-category-list {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)) !important;
+  gap: 18px !important;
+  justify-content: center !important;
+  padding-left: 0 !important;
+  margin: 0 !important;
+}
 
-/* Article cover polish */
-.home-article-thumbnail img,
+.category-list-content .all-category-list > .all-category-list-item {
+  width: auto !important;
+  min-height: 76px !important;
+  padding: 22px 24px !important;
+  border-radius: 18px !important;
+  border: 1px solid var(--border-color) !important;
+  background: var(--background-color) !important;
+  box-shadow: var(--redefine-box-shadow-flat) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 12px !important;
+  font-size: 1.28rem !important;
+  font-weight: 650 !important;
+  line-height: 1.2 !important;
+}
+
+.category-list-content .all-category-list > .all-category-list-item:hover {
+  background: var(--second-background-color) !important;
+  color: var(--primary-color) !important;
+  box-shadow: var(--redefine-box-shadow-hover) !important;
+  transform: translateY(-2px) !important;
+}
+
+.category-list-content .all-category-list > .all-category-list-item > .all-category-list-link {
+  border-bottom: 0 !important;
+  text-decoration: none !important;
+}
+
+.category-list-content .all-category-list > .all-category-list-item span.all-category-list-count {
+  margin-left: 0 !important;
+  min-width: 28px !important;
+  height: 28px !important;
+  padding: 0 8px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 999px !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+}
+
+/* Home page: no article cover thumbnails. */
+.home-content-container .home-article-list .home-article-item .home-article-thumbnail,
+#home-article-thumbnail {
+  display: none !important;
+}
+
+.home-content-container .home-article-list .home-article-item > .flex {
+  padding-top: 1.75rem !important;
+}
+
+/* Article image polish */
 .article-content img:first-child {
   object-fit: cover;
 }
 
-/* Keep taxonomy pages clean */
-.tagcloud-content a {
-  filter: none !important;
-  -webkit-filter: none !important;
-  opacity: 1 !important;
+@media (max-width: 640px) {
+  .tagcloud-content,
+  .category-list-content {
+    width: min(100%, calc(100vw - 32px)) !important;
+    margin-top: 24px !important;
+  }
+
+  .category-list-content .all-category-list {
+    grid-template-columns: 1fr !important;
+  }
 }

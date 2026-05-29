@@ -207,7 +207,7 @@ plugins:
 
 page_templates:
   friends_column: 2
-  tags_style: cloud
+  tags_style: blur
   masonry:
     batch_size: 12
     initial_batch_size: 24

@@ -105,7 +105,7 @@ home:
     enable: true
     position: left
     first_item: info
-    announcement: 欢迎来到 1ukvcn 的博客。这里记录技术、学习和生活。
+    announcement: https://github.com/1ukvcn
     show_on_mobile: true
     links:
       归档:

@@ -1,13 +1,12 @@
 info:
   title: 1ukvcn's Blog
-  subtitle: 平安喜樂 順遂無憂
+  subtitle: 想要成为特别的人
   author: 1ukvcn
   url: https://1ukvcn.github.io
 
 defaults:
   favicon: /images/favicon.svg
-  avatar: /images/avatar.jpg
-
+  avatar: /images/avatar.svg
 
 colors:
   primary: "#f5b301"
@@ -27,11 +26,11 @@ global:
     percentage: true
 
   website_counter:
-    url: https://cn.vercount.one/js
+    url: /js/site-counter-zero.js
     enable: true
     site_pv: true
     site_uv: true
-    post_pv: true
+    post_pv: false
 
   preloader:
     enable: false
@@ -54,7 +53,7 @@ home_banner:
   image:
     light: /images/banner-light.svg
     dark: /images/banner-dark.svg
-  title: 平安喜樂 順遂無憂
+  title: 想要成为特别的人
   subtitle:
     text:
       - 记录技术、学习和生活
@@ -94,9 +93,6 @@ navbar:
     分类:
       path: /categories/
       icon: fa-solid fa-folder
-    访客地图:
-      path: /visitors/
-      icon: fa-solid fa-earth-asia
     关于:
       path: /about/
       icon: fa-regular fa-user
@@ -121,9 +117,6 @@ home:
       分类:
         path: /categories/
         icon: fa-solid fa-folder
-      访客地图:
-        path: /visitors/
-        icon: fa-solid fa-earth-asia
 
   article_date_format: auto
   excerpt_length: 180
@@ -202,6 +195,14 @@ page_templates:
   masonry:
     batch_size: 12
     initial_batch_size: 24
+
+inject:
+  enable: true
+  head:
+    - '<link rel="stylesheet" href="/css/custom-fixes.css">'
+  footer:
+    -
+    -
 
 cdn:
   enable: false

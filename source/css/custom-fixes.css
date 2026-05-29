@@ -1,0 +1,41 @@
+/* 1ukvcn custom cleanup: tags/categories pages */
+
+/* Remove the outer card/frame around Tags and Categories pages */
+.page-template-container:has(.tagcloud-content),
+.page-template-container:has(.category-list-content) {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+.page-template-container:has(.tagcloud-content):hover,
+.page-template-container:has(.category-list-content):hover {
+  box-shadow: none !important;
+}
+
+/* Hide duplicated page titles: “标签” and “分类” */
+.page-template-container:has(.tagcloud-content) > .page-title-header,
+.page-template-container:has(.category-list-content) > .page-title-header {
+  display: none !important;
+}
+
+/* Keep tag buttons clear and readable; no blur effect. */
+.tagcloud-content .tag-list a,
+.tagcloud-content .tag-list a[data-weight],
+.tagcloud-content .tag-list:hover a {
+  filter: none !important;
+  -webkit-filter: none !important;
+  opacity: 1 !important;
+}
+
+.tagcloud-content .tag-list a:hover {
+  filter: none !important;
+  -webkit-filter: none !important;
+}
+
+/* Slightly reduce empty whitespace after removing the title */
+.tagcloud-content,
+.category-list-content {
+  margin-top: 0 !important;
+}

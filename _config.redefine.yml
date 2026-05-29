@@ -26,7 +26,7 @@ global:
     percentage: true
 
   website_counter:
-    url: /js/site-counter-zero.js
+    url: https://cn.vercount.one/js
     enable: true
     site_pv: true
     site_uv: true

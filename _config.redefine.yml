@@ -1,6 +1,6 @@
 info:
   title: 1ukvcn's Blog
-  subtitle: 想要成为特别的人
+  subtitle: 平安喜樂 順遂無憂
   author: 1ukvcn
   url: https://1ukvcn.github.io
 
@@ -53,7 +53,7 @@ home_banner:
   image:
     light: /images/banner-light.svg
     dark: /images/banner-dark.svg
-  title: 想要成为特别的人
+  title: 平安喜樂 順遂無憂
   subtitle:
     text:
       - 记录技术、学习和生活
@@ -183,7 +183,7 @@ comment:
 footer:
   runtime: true
   icon: '<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>'
-  start: 2026/05/29 00:00:00
+  start: 2026/05/29 16:30:00
   statistics: true
   customize: Powered by Hexo & Redefine. Built by 1ukvcn.
   icp:

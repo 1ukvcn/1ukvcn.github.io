@@ -42,7 +42,7 @@ global:
   open_graph:
     enable: true
     image: /images/og.svg
-    description: 这里是 1ukvcn 的个人博客，记录技术、学习、网络安全和生活。
+    description: https://github.com/1ukvcn
 
   google_analytics:
     enable: false
